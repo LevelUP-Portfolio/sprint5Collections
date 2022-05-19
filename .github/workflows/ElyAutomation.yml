@@ -1,6 +1,11 @@
 name: Create Cards in Trello with NewmanAction Run
 
-on: [pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
 
 jobs:
   Create-Cards-Trello-API-Collection-run:
