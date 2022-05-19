@@ -1,0 +1,14 @@
+name: Newman Action Run
+
+on: [push]
+
+jobs:
+  Trello-API-Collection-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vamos a correr una Collection de Postman a continuación
+      - uses: actions/checkout@master
+        with:
+          apiKey: ${{ secrets.ELY_API_POSTMAN }}
+          collection: 20549885-69fa6280-2b36-4858-8683-2ae902e26459
+          environment: 20549885-fc579da8-f078-4b10-b4d2-cba239f24789
