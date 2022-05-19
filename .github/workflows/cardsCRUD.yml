@@ -1,0 +1,17 @@
+name: Newman Run
+
+on:
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  newman:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: matt-ball/newman-action@master
+        with:
+          apiKey: ${{ secrets.ELYERPOSTMANAPIKEY }}
+          collection: 20549885-69fa6280-2b36-4858-8683-2ae902e26459
+          environment: 20549885-fc579da8-f078-4b10-b4d2-cba239f24789
