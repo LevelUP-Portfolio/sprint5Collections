@@ -11,8 +11,8 @@ jobs:
       - name: multiple script
         run: |
           node -v
-          npm -
-      - run: npm install -g newman
-      - run: npm install -g newman-reporter-html extra
-      - run: newman run https://api.getpostman.com/collections/20549885-69fa6280-2b36-4858-8683-2ae902e26459?apikey=PMAK-6270c2444dca41149bca1b4f-ef2499573537ce86a618ac5096f2ccb1ee -e https://api.getpostman.com/environments/20549885-fc579da8-f078-4b10-b4d2-cba239f24789?apikey=PMAK-6270c2444dca41149bca1b4f-ef2499573537ce86a618ac5096f2ccb1ee
-      - run: mkdir -p testResults
+          npm -v
+          npm install -g newman
+          npm install -g newman-reporter-html extra
+          newman run https://api.getpostman.com/collections/20549885-69fa6280-2b36-4858-8683-2ae902e26459?apikey=PMAK-6270c2444dca41149bca1b4f-ef2499573537ce86a618ac5096f2ccb1ee -e https://api.getpostman.com/environments/20549885-fc579da8-f078-4b10-b4d2-cba239f24789?apikey=PMAK-6270c2444dca41149bca1b4f-ef2499573537ce86a618ac5096f2ccb1ee
+          mkdir -p testResults
