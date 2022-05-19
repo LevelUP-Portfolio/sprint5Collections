@@ -6,8 +6,8 @@ jobs:
   Trello-API-Collection-run:
     runs-on: ubuntu-latest
     steps:
-      - name: Vamos a correr una Collection de Postman a continuación
       - uses: actions/checkout@master
+      - uses: matt-ball/newman-action@v1.0.4
         with:
           apiKey: ${{ secrets.ELY_API_POSTMAN }}
           collection: 20549885-69fa6280-2b36-4858-8683-2ae902e26459
