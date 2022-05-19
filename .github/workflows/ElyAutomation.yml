@@ -1,4 +1,4 @@
-name: Newman Action Run
+name: Create Cards in Trello with NewmanAction Run
 
 on: [pull_request]
 
