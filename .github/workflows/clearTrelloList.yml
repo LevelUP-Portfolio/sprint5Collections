@@ -2,9 +2,9 @@ name: Clear Cards in Trello with Newman Final Action Run
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
     types: [opened, synchronize]
 
 jobs:
