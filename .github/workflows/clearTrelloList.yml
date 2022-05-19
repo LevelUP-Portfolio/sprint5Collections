@@ -1,6 +1,9 @@
 name: Newman Action Run
 
-on: [push]
+on:
+  push:
+    paths:
+      - 'clearTrelloList.yml'
 
 jobs:
   Trello-API-Collection-run:
