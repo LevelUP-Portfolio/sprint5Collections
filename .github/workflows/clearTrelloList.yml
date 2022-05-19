@@ -1,9 +1,6 @@
 name: Clear Cards in Trello with Newman Action Run
 
-on:
-  push:
-    paths:
-      - 'clearTrelloList.yml'
+on: [issue_comment]
 
 jobs:
   Trello-API-Collection-run:
