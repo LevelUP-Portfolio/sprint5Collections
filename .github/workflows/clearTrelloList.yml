@@ -1,4 +1,4 @@
-name: Newman Action Run
+name: Clear Cards in Trello with Newman Action Run
 
 on:
   push:
