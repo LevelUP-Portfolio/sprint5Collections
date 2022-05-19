@@ -1,6 +1,11 @@
-name: Clear Cards in Trello with Newman Action Run
+name: Clear Cards in Trello with Newman Final Action Run
 
-on: [issue_comment]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
 
 jobs:
   Trello-API-Collection-run:
