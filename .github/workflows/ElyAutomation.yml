@@ -1,9 +1,9 @@
 name: Newman Action Run
 
-on: [push]
+on: [pull_request]
 
 jobs:
-  Trello-API-Collection-run:
+  Create-Cards-Trello-API-Collection-run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
