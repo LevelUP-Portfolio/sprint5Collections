@@ -11,8 +11,21 @@ jobs:
   Create-Cards-Trello-API-Collection-run:
     runs-on: ubuntu-latest
     steps:
-      - name: Github Action in master 
+      - name: Github Action
         uses: actions/checkout@master
+      - name: Setup Java JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Cache Maven packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-maven-
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots package
       - name: Newman Run - Postman Collection
         uses: matt-ball/newman-action@v1.0.4
         with:
@@ -20,11 +33,11 @@ jobs:
           collection: 20549885-69fa6280-2b36-4858-8683-2ae902e26459
           environment: 20549885-fc579da8-f078-4b10-b4d2-cba239f24789
       - name: xray-action
-        uses: mikepenz/xray-action@v2.4.0
+        uses: mikepenz/xray-action@{latest-release}
         with:
           username: ${{ secrets.MY_XRAY_ID }}
           password: ${{ secrets.MY_XRAY_SECRET }}
           testFormat: "junit"
-          testPaths: "**/test/*.xml"
+          testPaths: "**/test-result/*.xml"
+          testExecKey: "UPEX-5838"
           projectKey: "UPEX"
-
