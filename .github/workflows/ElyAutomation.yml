@@ -13,17 +13,6 @@ jobs:
     steps:
       - name: Github Action
         uses: actions/checkout@master
-      - name: Setup Java JDK
-        uses: actions/setup-java@v3
-        with:
-          java-version: '11'
-          distribution: 'adopt'
-      - name: Cache Maven packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-maven-
       - name: Newman Run - Postman Collection
         uses: matt-ball/newman-action@v1.0.4
         with:
@@ -36,6 +25,6 @@ jobs:
           username: ${{ secrets.MY_XRAY_ID }}
           password: ${{ secrets.MY_XRAY_SECRET }}
           testFormat: "junit"
-          testPaths: "**/test-result/*.xml"
+          testPaths: "newman/*.xml"
           testExecKey: "UPEX-5838"
           projectKey: "UPEX"
