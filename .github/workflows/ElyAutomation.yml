@@ -1,8 +1,12 @@
 name: Create Cards in Trello with NewmanAction Run
 
 on:
-  pull_request:
-    branches: [master]
+  workflow_dispatch:
+    inputs:
+      test_plan_key:
+        description: 'UPEX-6214'
+        required: false
+        default: ''
 
 jobs:
   Create-Cards-Trello-API-Collection-run:
