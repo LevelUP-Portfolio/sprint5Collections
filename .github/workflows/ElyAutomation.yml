@@ -3,8 +3,8 @@ name: Create Cards in Trello with NewmanAction Run
 on:
   workflow_dispatch:
     inputs:
-      test_plan_key:
-        description: 'UPEX-6214'
+      test_execution_key:
+        description: 'UPEX-6216'
         required: false
         default: ''
 
@@ -29,4 +29,5 @@ jobs:
           testFormat: "junit"
           testPaths: "newman/*.xml"
           testExecKey: "UPEX-6216"
+          testEnvironments: "QA-Trello-API"
           projectKey: "UPEX"
