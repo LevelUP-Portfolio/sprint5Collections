@@ -28,5 +28,5 @@ jobs:
           password: ${{ secrets.MY_XRAY_SECRET }}
           testFormat: "junit"
           testPaths: "newman/*.xml"
-          testExecKey: "UPEX-5838"
+          testExecKey: "UPEX-6216"
           projectKey: "UPEX"
